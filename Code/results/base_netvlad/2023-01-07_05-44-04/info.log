@@ -1,0 +1,61 @@
+2023-01-07 05:44:04   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/base_netvlad/2023-01-07_05-44-04', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-07 05:44:04   The outputs are being saved in /content/drive/MyDrive/MLDL/results/base_netvlad/2023-01-07_05-44-04
+2023-01-07 05:44:04   Using 1 GPUs and 2 CPUs
+2023-01-07 05:45:27   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-07 05:45:27   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-07 05:46:26   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-07 05:47:31   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-07 05:49:40   Output dimension of the model is 16384, with 17.27 GFLOPs
+2023-01-07 05:49:40   Start training epoch: 00
+2023-01-07 06:56:37   Finished epoch 00 in 1:06:56, average epoch triplet loss = 0.0269
+2023-01-07 08:06:40   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 86.2, R@5: 94.9, R@10: 96.9, R@20: 98.2
+2023-01-07 08:06:41   Improved: previous best R@5 = 0.0, current R@5 = 94.9
+2023-01-07 08:06:41   Start training epoch: 01
+2023-01-07 08:48:12   Finished epoch 01 in 0:41:30, average epoch triplet loss = 0.0193
+2023-01-07 08:53:11   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.2, R@5: 95.7, R@10: 97.3, R@20: 98.4
+2023-01-07 08:53:12   Improved: previous best R@5 = 94.9, current R@5 = 95.7
+2023-01-07 08:53:12   Start training epoch: 02
+2023-01-07 09:29:52   Finished epoch 02 in 0:36:40, average epoch triplet loss = 0.0156
+2023-01-07 09:34:56   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.5, R@5: 95.7, R@10: 97.3, R@20: 98.4
+2023-01-07 09:34:56   Improved: previous best R@5 = 95.7, current R@5 = 95.7
+2023-01-07 09:34:56   Start training epoch: 03
+2023-01-07 10:09:14   Finished epoch 03 in 0:34:17, average epoch triplet loss = 0.0133
+2023-01-07 10:14:13   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.1, R@5: 95.9, R@10: 97.5, R@20: 98.5
+2023-01-07 10:14:13   Improved: previous best R@5 = 95.7, current R@5 = 95.9
+2023-01-07 10:14:13   Start training epoch: 04
+2023-01-07 10:47:05   Finished epoch 04 in 0:32:52, average epoch triplet loss = 0.0111
+2023-01-07 10:52:03   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.3, R@5: 96.0, R@10: 97.5, R@20: 98.5
+2023-01-07 10:52:04   Improved: previous best R@5 = 95.9, current R@5 = 96.0
+2023-01-07 10:52:04   Start training epoch: 05
+2023-01-07 11:24:03   Finished epoch 05 in 0:31:59, average epoch triplet loss = 0.0089
+2023-01-07 11:29:02   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.4, R@5: 95.8, R@10: 97.5, R@20: 98.6
+2023-01-07 11:29:02   Not improved: 1 / 3: best R@5 = 96.0, current R@5 = 95.8
+2023-01-07 11:29:02   Start training epoch: 06
+2023-01-07 12:00:22   Finished epoch 06 in 0:31:19, average epoch triplet loss = 0.0080
+2023-01-07 12:05:23   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.3, R@5: 96.0, R@10: 97.4, R@20: 98.6
+2023-01-07 12:05:24   Improved: previous best R@5 = 96.0, current R@5 = 96.0
+2023-01-07 12:05:24   Start training epoch: 07
+2023-01-07 12:36:46   Finished epoch 07 in 0:31:21, average epoch triplet loss = 0.0074
+2023-01-07 12:41:43   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.6, R@5: 95.9, R@10: 97.4, R@20: 98.4
+2023-01-07 12:41:43   Not improved: 1 / 3: best R@5 = 96.0, current R@5 = 95.9
+2023-01-07 12:41:43   Start training epoch: 08
+2023-01-07 13:12:42   Finished epoch 08 in 0:30:59, average epoch triplet loss = 0.0066
+2023-01-07 13:17:40   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.5, R@5: 95.8, R@10: 97.5, R@20: 98.5
+2023-01-07 13:17:40   Not improved: 2 / 3: best R@5 = 96.0, current R@5 = 95.8
+2023-01-07 13:17:40   Start training epoch: 09
+2023-01-07 13:26:44   
+Traceback (most recent call last):
+  File "train.py", line 119, in <module>
+    triplets_ds.compute_triplets(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 242, in compute_triplets
+    self.compute_triplets_partial(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 378, in compute_triplets_partial
+    neg_indexes = self.get_hardest_negatives_indexes(args, cache, query_features, neg_indexes)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 287, in get_hardest_negatives_indexes
+    _, neg_nums = faiss_index.search(query_features.reshape(1, -1), self.negs_num_per_query)
+  File "/usr/local/lib/python3.8/dist-packages/faiss/class_wrappers.py", line 343, in replacement_search
+    self.search_c(n, swig_ptr(x), k, swig_ptr(D), swig_ptr(I), params)
+  File "/usr/local/lib/python3.8/dist-packages/faiss/swigfaiss_avx2.py", line 1902, in search
+    return _swigfaiss_avx2.IndexFlat_search(self, n, x, k, distances, labels, params)
+KeyboardInterrupt
+

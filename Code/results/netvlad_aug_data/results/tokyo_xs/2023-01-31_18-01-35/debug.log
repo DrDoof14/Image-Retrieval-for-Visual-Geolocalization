@@ -1,0 +1,10 @@
+2023-01-31 18:01:35   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, brightness_factor_max=2.0, brightness_factor_min=1.0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='tokyo_xs', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/netvlad_aug_data/2023-01-12_15-12-35/last_model.pth', saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/netvlad_aug_data/results/tokyo_xs/2023-01-31_18-01-35', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-31 18:01:35   The outputs are being saved in /content/drive/MyDrive/MLDL/results/netvlad_aug_data/results/tokyo_xs/2023-01-31_18-01-35
+2023-01-31 18:01:35   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-31 18:01:37   Resuming model from /content/drive/MyDrive/MLDL/results/netvlad_aug_data/2023-01-12_15-12-35/last_model.pth
+2023-01-31 18:03:21   Test set: < BaseDataset, tokyo_xs - #database: 12771; #queries: 315 >
+2023-01-31 18:03:21   Extracting database features for evaluation/testing
+2023-01-31 18:08:40   Extracting queries features for evaluation/testing
+2023-01-31 18:09:00   Calculating recalls
+2023-01-31 18:09:02   Recalls on < BaseDataset, tokyo_xs - #database: 12771; #queries: 315 >: R@1: 54.9, R@5: 70.2, R@10: 74.9, R@20: 78.7
+2023-01-31 18:09:02   Finished in 0:07:27

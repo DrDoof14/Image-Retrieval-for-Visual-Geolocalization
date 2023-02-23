@@ -1,0 +1,22 @@
+2023-02-04 09:15:14   Arguments: Namespace(Ensembel=False, aggregation='netvlad', aggregation2='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='tokyo_night', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/synthetic_data3/2023-02-02_13-43-13/best_model.pth', resume2=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/synthetic_data3/tokyo_night/2023-02-04_09-15-14', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25, weight_decay=0.01)
+2023-02-04 09:15:14   The outputs are being saved in /content/drive/MyDrive/MLDL/results/synthetic_data3/tokyo_night/2023-02-04_09-15-14
+2023-02-04 09:15:15   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-02-04 09:15:21   Resuming model from /content/drive/MyDrive/MLDL/results/synthetic_data3/2023-02-02_13-43-13/best_model.pth
+2023-02-04 09:17:39   
+Traceback (most recent call last):
+  File "eval.py", line 103, in <module>
+    test_ds = datasets_ws.BaseDataset(args, args.datasets_folder, args.dataset_name, "test")
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 101, in __init__
+    knn.fit(self.database_utms)
+  File "/usr/local/lib/python3.8/dist-packages/sklearn/neighbors/_unsupervised.py", line 166, in fit
+    return self._fit(X)
+  File "/usr/local/lib/python3.8/dist-packages/sklearn/neighbors/_base.py", line 435, in _fit
+    X = self._validate_data(X, accept_sparse="csr")
+  File "/usr/local/lib/python3.8/dist-packages/sklearn/base.py", line 566, in _validate_data
+    X = check_array(X, **check_params)
+  File "/usr/local/lib/python3.8/dist-packages/sklearn/utils/validation.py", line 769, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got 1D array instead:
+array=[].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+

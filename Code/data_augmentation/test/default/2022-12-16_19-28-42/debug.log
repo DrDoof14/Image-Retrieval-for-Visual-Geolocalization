@@ -1,0 +1,13 @@
+2022-12-16 19:28:42   Arguments: Namespace(aggregation='netvlad', backbone='resnet50conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder='pitts30k/images/train', pca_dim=2048, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, saturation=0, save_dir='test/default/2022-12-16_19-28-42', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2022-12-16 19:28:42   The outputs are being saved in test/default/2022-12-16_19-28-42
+2022-12-16 19:28:43   Train only conv4_x of the resnetresnet50 (remove conv5_x), freeze the previous ones
+2022-12-16 19:28:49   
+Traceback (most recent call last):
+  File "eval.py", line 99, in <module>
+    pca = util.compute_pca(args, model, args.pca_dataset_folder, full_features_dim)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/util.py", line 65, in compute_pca
+    pca_ds = datasets_ws.PCADataset(args, args.datasets_folder, pca_dataset_folder)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 56, in __init__
+    raise FileNotFoundError(f"Folder {dataset_folder_full_path} does not exist")
+FileNotFoundError: Folder /content/pitts30k/images/train does not exist
+

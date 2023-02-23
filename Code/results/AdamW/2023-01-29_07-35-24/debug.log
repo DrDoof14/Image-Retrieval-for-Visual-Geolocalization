@@ -1,0 +1,100 @@
+2023-01-29 07:35:24   Arguments: Namespace(Ensembel=False, aggregation='netvlad', aggregation2='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='AdamW', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, resume2=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/AdamW/2023-01-29_07-35-24', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25, weight_decay=0.01)
+2023-01-29 07:35:24   The outputs are being saved in /content/drive/MyDrive/MLDL/results/AdamW/2023-01-29_07-35-24
+2023-01-29 07:35:24   Using 1 GPUs and 2 CPUs
+2023-01-29 07:35:24   Loading dataset pitts30k from folder /content/drive/MyDrive/MLDL/datasets_vg
+2023-01-29 07:36:57   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-29 07:36:57   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-29 07:38:02   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-29 07:39:22   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-29 07:39:23   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-29 07:39:30   Extracting features to initialize NetVLAD layer
+2023-01-29 07:40:43   NetVLAD centroids shape: (64, 256)
+2023-01-29 07:40:43   Output dimension of the model is 16384, with 17.27 GFLOPs
+2023-01-29 07:40:43   Start training epoch: 00
+2023-01-29 07:40:43   Cache: 0 / 5
+2023-01-29 07:57:51   Epoch[00](0/5): current batch triplet loss = 0.0190, average epoch triplet loss = 0.0348
+2023-01-29 07:57:51   Cache: 1 / 5
+2023-01-29 08:05:51   Epoch[00](1/5): current batch triplet loss = 0.0146, average epoch triplet loss = 0.0312
+2023-01-29 08:05:51   Cache: 2 / 5
+2023-01-29 08:13:13   Epoch[00](2/5): current batch triplet loss = 0.0364, average epoch triplet loss = 0.0297
+2023-01-29 08:13:13   Cache: 3 / 5
+2023-01-29 08:20:26   Epoch[00](3/5): current batch triplet loss = 0.0268, average epoch triplet loss = 0.0281
+2023-01-29 08:20:26   Cache: 4 / 5
+2023-01-29 08:26:58   Epoch[00](4/5): current batch triplet loss = 0.0016, average epoch triplet loss = 0.0269
+2023-01-29 08:26:58   Finished epoch 00 in 0:46:14, average epoch triplet loss = 0.0269
+2023-01-29 08:26:58   Extracting database features for evaluation/testing
+2023-01-29 08:51:50   Extracting queries features for evaluation/testing
+2023-01-29 09:07:50   Calculating recalls
+2023-01-29 09:08:23   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 86.2, R@5: 94.9, R@10: 96.9, R@20: 98.2
+2023-01-29 09:08:23   Improved: previous best R@5 = 0.0, current R@5 = 94.9
+2023-01-29 09:08:23   Start training epoch: 01
+2023-01-29 09:08:23   Cache: 0 / 5
+2023-01-29 09:15:01   Epoch[01](0/5): current batch triplet loss = 0.0259, average epoch triplet loss = 0.0212
+2023-01-29 09:15:01   Cache: 1 / 5
+2023-01-29 09:21:28   Epoch[01](1/5): current batch triplet loss = 0.0188, average epoch triplet loss = 0.0212
+2023-01-29 09:21:28   Cache: 2 / 5
+2023-01-29 09:27:54   Epoch[01](2/5): current batch triplet loss = 0.0221, average epoch triplet loss = 0.0206
+2023-01-29 09:27:54   Cache: 3 / 5
+2023-01-29 09:34:01   Epoch[01](3/5): current batch triplet loss = 0.0104, average epoch triplet loss = 0.0198
+2023-01-29 09:34:01   Cache: 4 / 5
+2023-01-29 09:39:59   Epoch[01](4/5): current batch triplet loss = 0.0244, average epoch triplet loss = 0.0192
+2023-01-29 09:39:59   Finished epoch 01 in 0:31:35, average epoch triplet loss = 0.0192
+2023-01-29 09:39:59   Extracting database features for evaluation/testing
+2023-01-29 09:42:20   Extracting queries features for evaluation/testing
+2023-01-29 09:44:08   Calculating recalls
+2023-01-29 09:44:41   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.3, R@5: 95.6, R@10: 97.3, R@20: 98.4
+2023-01-29 09:44:42   Improved: previous best R@5 = 94.9, current R@5 = 95.6
+2023-01-29 09:44:42   Start training epoch: 02
+2023-01-29 09:44:42   Cache: 0 / 5
+2023-01-29 09:50:35   Epoch[02](0/5): current batch triplet loss = 0.0179, average epoch triplet loss = 0.0181
+2023-01-29 09:50:35   Cache: 1 / 5
+2023-01-29 09:56:20   Epoch[02](1/5): current batch triplet loss = 0.0006, average epoch triplet loss = 0.0164
+2023-01-29 09:56:20   Cache: 2 / 5
+2023-01-29 10:01:56   Epoch[02](2/5): current batch triplet loss = 0.0098, average epoch triplet loss = 0.0165
+2023-01-29 10:01:56   Cache: 3 / 5
+2023-01-29 10:07:26   Epoch[02](3/5): current batch triplet loss = 0.0133, average epoch triplet loss = 0.0159
+2023-01-29 10:07:26   Cache: 4 / 5
+2023-01-29 10:13:01   Epoch[02](4/5): current batch triplet loss = 0.0220, average epoch triplet loss = 0.0156
+2023-01-29 10:13:01   Finished epoch 02 in 0:28:19, average epoch triplet loss = 0.0156
+2023-01-29 10:13:01   Extracting database features for evaluation/testing
+2023-01-29 10:15:23   Extracting queries features for evaluation/testing
+2023-01-29 10:17:11   Calculating recalls
+2023-01-29 10:17:44   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.7, R@5: 95.6, R@10: 97.3, R@20: 98.5
+2023-01-29 10:17:44   Improved: previous best R@5 = 95.6, current R@5 = 95.6
+2023-01-29 10:17:44   Start training epoch: 03
+2023-01-29 10:17:44   Cache: 0 / 5
+2023-01-29 10:23:13   Epoch[03](0/5): current batch triplet loss = 0.0016, average epoch triplet loss = 0.0141
+2023-01-29 10:23:13   Cache: 1 / 5
+2023-01-29 10:28:38   Epoch[03](1/5): current batch triplet loss = 0.0054, average epoch triplet loss = 0.0143
+2023-01-29 10:28:38   Cache: 2 / 5
+2023-01-29 10:34:01   Epoch[03](2/5): current batch triplet loss = 0.0041, average epoch triplet loss = 0.0141
+2023-01-29 10:34:01   Cache: 3 / 5
+2023-01-29 10:39:23   Epoch[03](3/5): current batch triplet loss = 0.0305, average epoch triplet loss = 0.0137
+2023-01-29 10:39:23   Cache: 4 / 5
+2023-01-29 10:44:39   Epoch[03](4/5): current batch triplet loss = 0.0228, average epoch triplet loss = 0.0133
+2023-01-29 10:44:39   Finished epoch 03 in 0:26:54, average epoch triplet loss = 0.0133
+2023-01-29 10:44:39   Extracting database features for evaluation/testing
+2023-01-29 10:47:01   Extracting queries features for evaluation/testing
+2023-01-29 10:48:50   Calculating recalls
+2023-01-29 10:49:24   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.1, R@5: 95.9, R@10: 97.5, R@20: 98.6
+2023-01-29 10:49:24   Improved: previous best R@5 = 95.6, current R@5 = 95.9
+2023-01-29 10:49:24   Start training epoch: 04
+2023-01-29 10:49:24   Cache: 0 / 5
+2023-01-29 10:54:42   Epoch[04](0/5): current batch triplet loss = 0.0056, average epoch triplet loss = 0.0122
+2023-01-29 10:54:42   Cache: 1 / 5
+2023-01-29 10:59:57   Epoch[04](1/5): current batch triplet loss = 0.0043, average epoch triplet loss = 0.0124
+2023-01-29 10:59:57   Cache: 2 / 5
+2023-01-29 11:05:12   Epoch[04](2/5): current batch triplet loss = 0.0395, average epoch triplet loss = 0.0115
+2023-01-29 11:05:12   Cache: 3 / 5
+2023-01-29 11:06:23   
+Traceback (most recent call last):
+  File "train.py", line 122, in <module>
+    triplets_ds.compute_triplets(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 248, in compute_triplets
+    self.compute_triplets_partial(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 372, in compute_triplets_partial
+    cache = self.compute_cache(args, model, subset_ds, cache_shape=(len(self), args.features_dim))
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 268, in compute_cache
+    cache[indexes.numpy()] = features.cpu().numpy()
+KeyboardInterrupt
+

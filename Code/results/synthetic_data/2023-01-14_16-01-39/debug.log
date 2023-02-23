@@ -1,0 +1,62 @@
+2023-01-14 16:01:39   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content', device='cuda', efficient_ram_testing=False, epochs_num=8, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/base_netvlad/resume_training/2023-01-12_09-09-47/best_model.pth', saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_16-01-39', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-14 16:01:39   The outputs are being saved in /content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_16-01-39
+2023-01-14 16:01:39   Using 1 GPUs and 2 CPUs
+2023-01-14 16:01:39   Loading dataset pitts30k from folder /content
+2023-01-14 16:01:39   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-14 16:01:39   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-14 16:01:40   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-14 16:01:40   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-14 16:01:40   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-14 16:01:43   Loading checkpoint: /content/drive/MyDrive/MLDL/results/base_netvlad/resume_training/2023-01-12_09-09-47/best_model.pth
+2023-01-14 16:01:46   Loaded checkpoint: start_epoch_num = 6, current_best_R@5 = 96.0
+2023-01-14 16:01:46   Resuming from epoch 6 with best recall@5 96.0
+2023-01-14 16:01:48   Output dimension of the model is 16384, with 17.33 GFLOPs
+2023-01-14 16:01:48   Start training epoch: 06
+2023-01-14 16:01:48   Cache: 0 / 5
+2023-01-14 16:07:08   Epoch[06](0/5): current batch triplet loss = 0.0270, average epoch triplet loss = 0.0206
+2023-01-14 16:07:08   Cache: 1 / 5
+2023-01-14 16:12:35   Epoch[06](1/5): current batch triplet loss = 0.0479, average epoch triplet loss = 0.0338
+2023-01-14 16:12:35   Cache: 2 / 5
+2023-01-14 16:17:49   Epoch[06](2/5): current batch triplet loss = 0.0198, average epoch triplet loss = 0.0289
+2023-01-14 16:17:49   Cache: 3 / 5
+2023-01-14 16:23:05   Epoch[06](3/5): current batch triplet loss = 0.0217, average epoch triplet loss = 0.0306
+2023-01-14 16:23:05   Cache: 4 / 5
+2023-01-14 16:28:25   Epoch[06](4/5): current batch triplet loss = 0.0071, average epoch triplet loss = 0.0280
+2023-01-14 16:28:25   Finished epoch 06 in 0:26:36, average epoch triplet loss = 0.0280
+2023-01-14 16:28:25   Extracting database features for evaluation/testing
+2023-01-14 16:30:49   Extracting queries features for evaluation/testing
+2023-01-14 16:32:40   Calculating recalls
+2023-01-14 16:33:15   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 77.6, R@5: 89.8, R@10: 93.1, R@20: 95.4
+2023-01-14 16:33:15   Not improved: 2 / 3: best R@5 = 96.0, current R@5 = 89.8
+2023-01-14 16:33:15   Start training epoch: 07
+2023-01-14 16:33:15   Cache: 0 / 5
+2023-01-14 16:39:05   Epoch[07](0/5): current batch triplet loss = 0.0191, average epoch triplet loss = 0.0247
+2023-01-14 16:39:05   Cache: 1 / 5
+2023-01-14 16:44:58   Epoch[07](1/5): current batch triplet loss = 0.0029, average epoch triplet loss = 0.0186
+2023-01-14 16:44:58   Cache: 2 / 5
+2023-01-14 16:50:48   Epoch[07](2/5): current batch triplet loss = 0.0237, average epoch triplet loss = 0.0195
+2023-01-14 16:50:48   Cache: 3 / 5
+2023-01-14 16:56:36   Epoch[07](3/5): current batch triplet loss = 0.0151, average epoch triplet loss = 0.0173
+2023-01-14 16:56:36   Cache: 4 / 5
+2023-01-14 17:02:23   Epoch[07](4/5): current batch triplet loss = 0.0072, average epoch triplet loss = 0.0176
+2023-01-14 17:02:23   Finished epoch 07 in 0:29:08, average epoch triplet loss = 0.0176
+2023-01-14 17:02:23   Extracting database features for evaluation/testing
+2023-01-14 17:04:50   Extracting queries features for evaluation/testing
+2023-01-14 17:06:40   Calculating recalls
+2023-01-14 17:07:17   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 79.9, R@5: 90.3, R@10: 92.9, R@20: 95.0
+2023-01-14 17:07:17   Not improved: 3 / 3: best R@5 = 96.0, current R@5 = 90.3
+2023-01-14 17:07:17   Performance did not improve for 3 epochs. Stop training.
+2023-01-14 17:07:17   Best R@5: 96.0
+2023-01-14 17:07:17   Trained for 08 epochs, in total in 1:05:37
+2023-01-14 17:07:17   
+Traceback (most recent call last):
+  File "train.py", line 213, in <module>
+    best_model_state_dict = torch.load(join(args.save_dir, "best_model.pth"))["model_state_dict"]
+  File "/usr/local/lib/python3.8/dist-packages/torch/serialization.py", line 771, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/usr/local/lib/python3.8/dist-packages/torch/serialization.py", line 270, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/usr/local/lib/python3.8/dist-packages/torch/serialization.py", line 251, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_16-01-39/best_model.pth'
+

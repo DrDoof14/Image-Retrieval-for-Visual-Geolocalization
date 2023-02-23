@@ -1,0 +1,27 @@
+2023-01-29 19:20:52   Arguments: Namespace(Ensembel=False, aggregation='netvlad', aggregation2='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=0.001, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='AdamW', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, resume2=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/AdamW3/2023-01-29_19-20-52', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25, weight_decay=0.01)
+2023-01-29 19:20:52   The outputs are being saved in /content/drive/MyDrive/MLDL/results/AdamW3/2023-01-29_19-20-52
+2023-01-29 19:20:52   Using 0 GPUs and 2 CPUs
+2023-01-29 19:20:52   Loading dataset pitts30k from folder /content/drive/MyDrive/MLDL/datasets_vg
+2023-01-29 19:22:19   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-29 19:22:19   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-29 19:23:21   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-29 19:24:19   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-29 19:24:20   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-29 19:24:20   
+Traceback (most recent call last):
+  File "train.py", line 48, in <module>
+    model = model.to(args.device)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 989, in to
+    return self._apply(convert)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 641, in _apply
+    module._apply(fn)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 987, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+  File "/usr/local/lib/python3.8/dist-packages/torch/cuda/__init__.py", line 229, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+

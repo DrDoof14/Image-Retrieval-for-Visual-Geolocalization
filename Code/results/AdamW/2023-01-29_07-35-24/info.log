@@ -1,0 +1,37 @@
+2023-01-29 07:35:24   Arguments: Namespace(Ensembel=False, aggregation='netvlad', aggregation2='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='AdamW', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, resume2=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/AdamW/2023-01-29_07-35-24', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25, weight_decay=0.01)
+2023-01-29 07:35:24   The outputs are being saved in /content/drive/MyDrive/MLDL/results/AdamW/2023-01-29_07-35-24
+2023-01-29 07:35:24   Using 1 GPUs and 2 CPUs
+2023-01-29 07:36:57   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-29 07:36:57   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-29 07:38:02   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-29 07:39:22   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-29 07:40:43   Output dimension of the model is 16384, with 17.27 GFLOPs
+2023-01-29 07:40:43   Start training epoch: 00
+2023-01-29 08:26:58   Finished epoch 00 in 0:46:14, average epoch triplet loss = 0.0269
+2023-01-29 09:08:23   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 86.2, R@5: 94.9, R@10: 96.9, R@20: 98.2
+2023-01-29 09:08:23   Improved: previous best R@5 = 0.0, current R@5 = 94.9
+2023-01-29 09:08:23   Start training epoch: 01
+2023-01-29 09:39:59   Finished epoch 01 in 0:31:35, average epoch triplet loss = 0.0192
+2023-01-29 09:44:41   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.3, R@5: 95.6, R@10: 97.3, R@20: 98.4
+2023-01-29 09:44:42   Improved: previous best R@5 = 94.9, current R@5 = 95.6
+2023-01-29 09:44:42   Start training epoch: 02
+2023-01-29 10:13:01   Finished epoch 02 in 0:28:19, average epoch triplet loss = 0.0156
+2023-01-29 10:17:44   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 87.7, R@5: 95.6, R@10: 97.3, R@20: 98.5
+2023-01-29 10:17:44   Improved: previous best R@5 = 95.6, current R@5 = 95.6
+2023-01-29 10:17:44   Start training epoch: 03
+2023-01-29 10:44:39   Finished epoch 03 in 0:26:54, average epoch triplet loss = 0.0133
+2023-01-29 10:49:24   Recalls on val set < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >: R@1: 88.1, R@5: 95.9, R@10: 97.5, R@20: 98.6
+2023-01-29 10:49:24   Improved: previous best R@5 = 95.6, current R@5 = 95.9
+2023-01-29 10:49:24   Start training epoch: 04
+2023-01-29 11:06:23   
+Traceback (most recent call last):
+  File "train.py", line 122, in <module>
+    triplets_ds.compute_triplets(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 248, in compute_triplets
+    self.compute_triplets_partial(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 372, in compute_triplets_partial
+    cache = self.compute_cache(args, model, subset_ds, cache_shape=(len(self), args.features_dim))
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 268, in compute_cache
+    cache[indexes.numpy()] = features.cpu().numpy()
+KeyboardInterrupt
+

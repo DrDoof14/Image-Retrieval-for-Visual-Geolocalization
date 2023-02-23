@@ -1,0 +1,15 @@
+2023-01-06 11:06:43   Arguments: Namespace(aggregation='gem', backbone='resnet18conv4', brightness=None, cache_refresh_rate=1000, channel_bottleneck=128, contrast=None, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=None, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, non_local=False, num_non_local=1, num_workers=2, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=None, random_resized_crop=None, random_rotation=None, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, saturation=None, save_dir='/content/drive/MyDrive/MLDL/results/base_gem/2023-01-06_11-06-42', seed=0, smart_augmentation=None, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-06 11:06:43   The outputs are being saved in /content/drive/MyDrive/MLDL/results/base_gem/2023-01-06_11-06-42
+2023-01-06 11:06:43   Using 1 GPUs and 2 CPUs
+2023-01-06 11:06:46   
+Traceback (most recent call last):
+  File "train.py", line 37, in <module>
+    triplets_ds = datasets_ws.TripletsDataset(args, args.datasets_folder, args.dataset_name, "train", args.negs_num_per_query)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 170, in __init__
+    T.ColorJitter(args.brightness, args.contrast, args.saturation, args.hue),
+  File "/usr/local/lib/python3.8/dist-packages/torchvision/transforms/transforms.py", line 1178, in __init__
+    self.brightness = self._check_input(brightness, "brightness")
+  File "/usr/local/lib/python3.8/dist-packages/torchvision/transforms/transforms.py", line 1195, in _check_input
+    raise TypeError(f"{name} should be a single number or a list/tuple with length 2.")
+TypeError: brightness should be a single number or a list/tuple with length 2.
+

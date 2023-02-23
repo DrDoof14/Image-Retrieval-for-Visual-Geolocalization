@@ -1,0 +1,28 @@
+2023-01-14 17:59:20   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='tokyo_night', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_16-01-39/last_model.pth', saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/synthetic_data/tokyo_night/2023-01-14_17-59-20', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-14 17:59:20   The outputs are being saved in /content/drive/MyDrive/MLDL/results/synthetic_data/tokyo_night/2023-01-14_17-59-20
+2023-01-14 17:59:20   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-14 17:59:22   Resuming model from /content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_16-01-39/last_model.pth
+2023-01-14 17:59:23   Test set: < BaseDataset, tokyo_night - #database: 12771; #queries: 105 >
+2023-01-14 17:59:23   Extracting database features for evaluation/testing
+2023-01-14 17:59:34   
+Traceback (most recent call last):
+  File "eval.py", line 106, in <module>
+    recalls, recalls_str = test.test(args, test_ds, model, args.test_method, pca)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/test.py", line 144, in test
+    for inputs, indices in tqdm(database_dataloader, ncols=100):
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1272, in _get_data
+    success, data = self._try_get_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+

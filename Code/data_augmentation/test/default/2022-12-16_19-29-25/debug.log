@@ -1,0 +1,25 @@
+2022-12-16 19:29:25   Arguments: Namespace(aggregation='netvlad', backbone='resnet50conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content/drive/MyDrive/MLDL/datasets_vg', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder='pitts30k/images/train', pca_dim=2048, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume=None, saturation=0, save_dir='test/default/2022-12-16_19-29-25', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2022-12-16 19:29:25   The outputs are being saved in test/default/2022-12-16_19-29-25
+2022-12-16 19:29:25   Train only conv4_x of the resnetresnet50 (remove conv5_x), freeze the previous ones
+2022-12-16 19:30:15   
+Traceback (most recent call last):
+  File "eval.py", line 99, in <module>
+    pca = util.compute_pca(args, model, args.pca_dataset_folder, full_features_dim)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/util.py", line 69, in compute_pca
+    for i, images in enumerate(dl):
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 60, in __getitem__
+    return base_transform(path_to_pil_img(self.images_paths[index]))
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 25, in path_to_pil_img
+    return Image.open(path).convert("RGB")
+  File "/usr/local/lib/python3.8/dist-packages/PIL/Image.py", line 2852, in open
+    prefix = fp.read(16)
+KeyboardInterrupt
+

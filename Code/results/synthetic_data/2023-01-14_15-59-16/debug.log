@@ -1,0 +1,20 @@
+2023-01-14 15:59:16   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content', device='cuda', efficient_ram_testing=False, epochs_num=8, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/base_gem/2023-01-06_11-10-32/best_model.pth', saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_15-59-16', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-14 15:59:16   The outputs are being saved in /content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_15-59-16
+2023-01-14 15:59:16   Using 1 GPUs and 2 CPUs
+2023-01-14 15:59:16   Loading dataset pitts30k from folder /content
+2023-01-14 15:59:17   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-14 15:59:17   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-14 15:59:17   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-14 15:59:17   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-14 15:59:17   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-01-14 15:59:21   Loading checkpoint: /content/drive/MyDrive/MLDL/results/base_gem/2023-01-06_11-10-32/best_model.pth
+2023-01-14 15:59:22   
+Traceback (most recent call last):
+  File "train.py", line 85, in <module>
+    model, optimizer, best_r5, start_epoch_num, not_improved_num = util.resume_train(args, model, optimizer)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/util.py", line 53, in resume_train
+    optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+  File "/usr/local/lib/python3.8/dist-packages/torch/optim/optimizer.py", line 201, in load_state_dict
+    raise ValueError("loaded state dict contains a parameter group "
+ValueError: loaded state dict contains a parameter group that doesn't match the size of optimizer's group
+

@@ -1,0 +1,51 @@
+2023-01-14 17:57:29   Arguments: Namespace(aggregation='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='pitts30k', datasets_folder='/content', device='cuda', efficient_ram_testing=False, epochs_num=10, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=2, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/base_netvlad/resume_training/2023-01-12_09-09-47/best_model.pth', saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_17-57-29', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25)
+2023-01-14 17:57:29   The outputs are being saved in /content/drive/MyDrive/MLDL/results/synthetic_data/2023-01-14_17-57-29
+2023-01-14 17:57:29   Using 1 GPUs and 2 CPUs
+2023-01-14 17:57:30   There are 96 queries without any positives within the training set. They won't be considered as they're useless for training.
+2023-01-14 17:57:30   Train query set: < TripletsDataset, pitts30k - #database: 10000; #queries: 7320 >
+2023-01-14 17:57:30   Val set: < BaseDataset, pitts30k - #database: 10000; #queries: 7608 >
+2023-01-14 17:57:30   Test set: < BaseDataset, pitts30k - #database: 10000; #queries: 6816 >
+2023-01-14 17:57:33   Resuming from epoch 6 with best recall@5 96.0
+2023-01-14 17:57:35   Output dimension of the model is 16384, with 17.33 GFLOPs
+2023-01-14 17:57:35   Start training epoch: 06
+2023-01-14 17:57:51   
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1272, in _get_data
+    success, data = self._try_get_data()
+  File "/usr/local/lib/python3.8/dist-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 119, in <module>
+    triplets_ds.compute_triplets(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 248, in compute_triplets
+    self.compute_triplets_partial(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 372, in compute_triplets_partial
+    cache = self.compute_cache(args, model, subset_ds, cache_shape=(len(self), args.features_dim))
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/datasets_ws.py", line 265, in compute_cache
+    for images, indexes in tqdm(subset_dl, ncols=100):
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1210, in __iter__
+    self.close()
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1316, in close
+    self.display(pos=0)
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1509, in display
+    self.sp(self.__str__() if msg is None else msg)
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 1165, in __str__
+    return self.format_meter(**self.format_dict)
+  File "/usr/local/lib/python3.8/dist-packages/tqdm/std.py", line 534, in format_meter
+    max(1, ncols - disp_len(nobar)) if ncols else 10,
+KeyboardInterrupt
+

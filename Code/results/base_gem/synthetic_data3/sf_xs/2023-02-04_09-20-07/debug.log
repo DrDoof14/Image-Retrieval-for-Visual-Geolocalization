@@ -1,0 +1,16 @@
+2023-02-04 09:20:08   Arguments: Namespace(Ensembel=False, aggregation='gem', aggregation2='netvlad', backbone='resnet18conv4', brightness=0, cache_refresh_rate=1000, contrast=0, criterion='triplet', dataset_name='sf_xs', datasets_folder='/content/drive/MyDrive/MLDL/sf-xs', device='cuda', efficient_ram_testing=False, epochs_num=1000, fc_output_dim=None, freeze_te=None, horizontal_flip=False, hue=0, infer_batch_size=16, l2='before_pool', lr=1e-05, lr_crn_layer=0.005, lr_crn_net=0.0005, majority_weight=0.01, margin=0.1, mining='partial', neg_samples_num=1000, negs_num_per_query=10, netvlad_clusters=64, num_workers=8, off_the_shelf='imagenet', optim='adam', patience=3, pca_dataset_folder=None, pca_dim=None, pretrain='imagenet', queries_per_epoch=5000, rand_perspective=0, random_resized_crop=0, random_rotation=0, recall_values=[1, 5, 10, 20], resize=[480, 640], resume='/content/drive/MyDrive/MLDL/results/synthetic_data3/2023-02-02_13-43-13/best_model.pth', resume2=None, saturation=0, save_dir='/content/drive/MyDrive/MLDL/results/base_gem/synthetic_data3/sf_xs/2023-02-04_09-20-07', seed=0, test_method='hard_resize', train_batch_size=4, train_positives_dist_threshold=10, trunc_te=None, val_positive_dist_threshold=25, weight_decay=0.01)
+2023-02-04 09:20:08   The outputs are being saved in /content/drive/MyDrive/MLDL/results/base_gem/synthetic_data3/sf_xs/2023-02-04_09-20-07
+2023-02-04 09:20:08   Train only conv4_x of the resnetresnet18 (remove conv5_x), freeze the previous ones
+2023-02-04 09:20:10   Resuming model from /content/drive/MyDrive/MLDL/results/synthetic_data3/2023-02-02_13-43-13/best_model.pth
+2023-02-04 09:20:10   
+Traceback (most recent call last):
+  File "eval.py", line 90, in <module>
+    model = util.resume_model(args, model)
+  File "/content/drive/MyDrive/MLDL/deep-visual-geo-localization-benchmark-main/util.py", line 51, in resume_model
+    model.load_state_dict(state_dict)
+  File "/usr/local/lib/python3.8/dist-packages/torch/nn/modules/module.py", line 1671, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for GeoLocalizationNet:
+	Missing key(s) in state_dict: "aggregation.1.p". 
+	Unexpected key(s) in state_dict: "aggregation.centroids", "aggregation.conv.weight". 
+
